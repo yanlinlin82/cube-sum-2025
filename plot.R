@@ -1,4 +1,6 @@
 # plot.R
+#install.packages("qrcode")
+library(qrcode)
 
 png("plot.png", width = 600, height = 600)
 
@@ -36,5 +38,12 @@ text(0.5, 2, e1)
 text(0.3, 1.5, e2)
 text(0.3, 1, e3)
 text(0.3, 0.5, e4, col = "brown")
+
+url <- "https://github.com/yanlinlin82/cube-sum-2025"
+qr <- qr_code(url)
+
+image(1.75 + (4:32)/50, 0.05 + (4:32)/50,
+      qr[4:32, 32:4],
+      col = c("white", "black"), add = TRUE)
 
 dev.off()
