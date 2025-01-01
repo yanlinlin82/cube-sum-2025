@@ -39,11 +39,12 @@ text(0.3, 1.5, e2)
 text(0.3, 1, e3)
 text(0.3, 0.5, e4, col = "brown")
 
-url <- "https://github.com/yanlinlin82/cube-sum-2025"
+url <- "https://github.com/yanlinlin82/cube-sum-2025/blob/main/plot.R"
 qr <- qr_code(url)
 
-image(1.75 + (4:32)/50, 0.05 + (4:32)/50,
+image(1.85 + (4:32)/64, 0.1 + (4:32)/64,
       qr[4:32, 32:4],
       col = c("white", "black"), add = TRUE)
+text(2.13, 0.7, "查看源码", col = "black", cex = 0.4, adj = 0.5)
 
 dev.off()
